@@ -3,7 +3,9 @@
 # ----------------------------------------------------------------------------------------------------------------------
 
 # imports
-import matplotlib
+import matplotlib.pyplot as plot
+import numpy as np
+import datetime
 
 
 def create_date_plot(x_data, y_data, title, x_label, y_label):
@@ -17,7 +19,11 @@ def create_date_plot(x_data, y_data, title, x_label, y_label):
     :param y_label:
     :return:
     """
-    pass
+    print(type(x_data[0]))
+    fig, ax = plot.subplots()
+    plot.plot_date(x_data, y_data)
+    ax.xaxis.set_tick_params(rotation=30, labelsize=10)
+    plot.show()
 
 # ----------------------------------------------------------------------------------------------------------------------
 # End

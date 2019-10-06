@@ -25,6 +25,7 @@ class Application(object):
         Runs the application.
         """
         # print(datetime.datetime.now())
+        # self.setup_database()
         weights = self.get_database_values('Weight')
         dates = self.get_database_values('Date')
         plot_date_data.create_date_plot(x_data=dates, y_data=weights, title='Body Weight Change', x_label='Date',
@@ -36,9 +37,9 @@ class Application(object):
         """
         con = Connection(path=self.database, auto_commit=False, reconnects=5, auto_connect=True)
         con.create_table(self.table, ['Weight', 'date'], ['INTEGER', 'TEXT'])
-        # for i in range(1, 21):
-        #     con.insert(self.table, [random.randint(100, 300), datetime.datetime.now()])
-        # con.commit()
+        for i in range(11, 25):
+            con.insert(self.table, [random.randint(100, 300), '2019-%s-06 16:13:54.511619' % i])
+        con.commit()
         print(con.select(self.table, ["Weight", "date"], fetchall=True))
         con.close()
 
