@@ -6,9 +6,16 @@
 import matplotlib
 
 
-def create_date_plot():
+def create_date_plot(x_data, y_data, title, x_label, y_label):
     """
     Attempts to create a plot with dates for the x axis.
+
+    :param x_data:
+    :param y_data:
+    :param title:
+    :param x_label:
+    :param y_label:
+    :return:
     """
     pass
 
