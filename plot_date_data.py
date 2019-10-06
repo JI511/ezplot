@@ -12,17 +12,20 @@ def create_date_plot(x_data, y_data, title, x_label, y_label):
     """
     Attempts to create a plot with dates for the x axis.
 
-    :param x_data:
-    :param y_data:
-    :param title:
-    :param x_label:
-    :param y_label:
+    :param list x_data:
+    :param list y_data:
+    :param str title:
+    :param str x_label:
+    :param str y_label:
     :return:
     """
     print(type(x_data[0]))
     fig, ax = plot.subplots()
     plot.plot_date(x_data, y_data)
-    ax.xaxis.set_tick_params(rotation=30, labelsize=10)
+    plot.tick_params('x', labelsize=8, labelrotation=25)
+    plot.title(title)
+    plot.ylabel(y_label)
+    plot.xlabel(x_label)
     plot.show()
 
 # ----------------------------------------------------------------------------------------------------------------------
