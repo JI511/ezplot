@@ -38,7 +38,7 @@ class Application(object):
         con = Connection(path=self.database, auto_commit=False, reconnects=5, auto_connect=True)
         con.create_table(self.table, ['Weight', 'date'], ['INTEGER', 'TEXT'])
         for i in range(11, 25):
-            con.insert(self.table, [random.randint(100, 300), '2019-%s-06 16:13:54.511619' % i])
+            con.insert(self.table, [random.randint(100, 300), '2019-%s-06' % i])
         con.commit()
         print(con.select(self.table, ["Weight", "date"], fetchall=True))
         con.close()

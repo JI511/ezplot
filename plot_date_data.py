@@ -4,8 +4,6 @@
 
 # imports
 import matplotlib.pyplot as plot
-import numpy as np
-import datetime
 
 
 def create_date_plot(x_data, y_data, title, x_label, y_label):
@@ -19,10 +17,9 @@ def create_date_plot(x_data, y_data, title, x_label, y_label):
     :param str y_label:
     :return:
     """
-    print(type(x_data[0]))
-    fig, ax = plot.subplots()
+    fig = plot.figure(figsize=(6, 8))
     plot.plot_date(x_data, y_data)
-    plot.tick_params('x', labelsize=8, labelrotation=25)
+    plot.tick_params('x', labelsize=8, labelrotation=90, direction='out')
     plot.title(title)
     plot.ylabel(y_label)
     plot.xlabel(x_label)
